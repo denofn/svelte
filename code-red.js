@@ -1,7 +1,7 @@
-import { parse as parse$1, parseExpressionAt as parseExpressionAt$1 } from "https://unpkg.com/acorn@^7.3.1?module";
-import { walk } from "https://unpkg.com/estree-walker@latest?module";
-import { analyze } from "https://unpkg.com/periscopic@^2.0.1?module";
-import { encode } from "https://unpkg.com/sourcemap-codec@^1.4.6?module";
+import { parse as parse$1, parseExpressionAt as parseExpressionAt$1 } from "https://cdn.skypack.dev/acorn@^7.3.1";
+import { walk } from "https://cdn.skypack.dev/estree-walker";
+import { analyze } from "https://cdn.skypack.dev/periscopic@^2.0.1";
+import { encode } from "https://cdn.skypack.dev/sourcemap-codec@^1.4.6";
 
 // generate an ID that is, to all intents and purposes, unique
 const id = Math.round(Math.random() * 1e20).toString(36);

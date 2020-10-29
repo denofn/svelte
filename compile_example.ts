@@ -15,7 +15,7 @@ const compiledSsr = compile(src, {
 	filename: 'Deno.svelte',
 	generate: 'ssr',
 	name: 'Deno',
-	sveltePath: "./svelte",
+	sveltePath: "https://esm.sh/svelte",
 });
 
 console.log("===SSR===")
@@ -26,7 +26,7 @@ const compiledDom = compile(src, {
 	filename: "Deno.svelte",
 	generate: 'dom',
 	name: "Deno",
-	sveltePath: "./svelte",
+	sveltePath: "https://esm.sh/svelte",
 });
 
 console.log("===DOM===")

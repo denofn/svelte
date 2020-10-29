@@ -1,6 +1,7 @@
 import * as svelte from '../../src/compiler/index.ts';
 import { assertEquals } from 'https://deno.land/std/testing/asserts.ts';
-import { join } from 'https://deno.land/std/path/mod.ts'
+import * as path from 'https://deno.land/std/path/mod.ts';
+
 async function try_require(file) {
 	try {
 		const mod = await import(file);
@@ -19,11 +20,7 @@ function normalize_warning(warning) {
 	delete warning.toString;
 	return warning;
 }
-
-  const fileStartRegex = /(^(file:)((\/\/)?))/;
-  const __dirname = join(import.meta.url, '../')
-                  .replace(fileStartRegex, '')
-                  .replace(/(\/$)/, '');
+  const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 	const files = Deno.readDirSync(`${__dirname}/samples`);
 	for (const dir of files) {
 

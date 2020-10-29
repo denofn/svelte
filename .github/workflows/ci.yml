@@ -6,10 +6,12 @@ jobs:
     timeout-minutes: 10
     strategy:
       matrix:
-        node-version: [8, 10, 12, 14]
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
     - uses: actions/checkout@v1
+    - uses: denolib/setup-deno@v2
+    with:
+      deno-version: v1.5
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}

@@ -9,8 +9,8 @@ async function build(source: string) {
   	sveltePath: "https://esm.sh/svelte",
   });
   await Deno.writeTextFile("./compiled.js", compiledDom.js.code);
-  await Deno.run({ cmd: "denopack -i ./main.ts -o ./build.js".split(" ") });
-
+  const p = Deno.run({ cmd: "denopack -i ./main.ts --output ./build.js".split(" ") });    
+  console.log(await p.status()) // { success: true } | { success: false }
 }
 
 await build(Deno.args[0]);
